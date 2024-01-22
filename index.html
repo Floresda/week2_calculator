@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculator</title>
+</head>
+<body>
+    <script>
+        let number1 = prompt("Enter the first number:");
+        
+        if (isNaN(number1)) {
+            alert("Invalid input. Please enter a valid number.");
+        } else {
+            let operator = prompt("Enter the operator (+, -, *, /):");
+        
+            if (operator === "+" || operator === "-" || operator === "*" || operator === "/") {
+                let number2 = prompt("Enter the second number:");
+        
+                if (isNaN(number2)) {
+                    alert("Invalid input. Please enter a valid number.");
+                } else {
+                    let result;
+                    switch (operator) {
+                        case "+":
+                            result = parseFloat(number1) + parseFloat(number2);
+                            break;
+                        case "-":
+                            result = parseFloat(number1) - parseFloat(number2);
+                            break;
+                        case "*":
+                            result = parseFloat(number1) * parseFloat(number2);
+                            break;
+                        case "/":
+                            if (parseFloat(number2) === 0) {
+                                alert("Error: Division by zero.");
+                            } else {
+                                result = parseFloat(number1) / parseFloat(number2);
+                            }
+                            break;
+                        default:
+                            alert("Invalid operator. Please enter a valid operator (+, -, *, /).");
+                            break;
+                    }
+        
+                    if (result !== undefined) {
+                        alert("Result: " + result);
+                    }
+                }
+            } else {
+                alert("Invalid operator. Please enter a valid operator (+, -, *, /).");
+            }
+        }
+            </script>
+</body>
+</html>
